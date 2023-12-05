@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(
-    "mongodb+srv://retrodroproyale:L5DY9R82L7qwr1rW@cluster0.hv2epfs.mongodb.net/users"
-  )
+  .connect(process.env.DATABASE)
   .then(() => {
     console.log("Connection successful");
   })

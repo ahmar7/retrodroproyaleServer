@@ -3,7 +3,9 @@ const app = express();
 var bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
-const dotnet = require("dotenv");
+const dotnet = require("dotenv").config({
+  path: path.resolve(__dirname, ".env"),
+});
 const newsLetterEmail = require("./models/newsletters");
 const database = require("./db/db");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,7 +17,6 @@ app.use(
 );
 // parse application/json
 app.use(bodyParser.json());
-dotnet.config({ path: "./config.env" });
 const port = process.env.PORT || 5000;
 const static_path = path.join(__dirname, "../../");
 app.use(express.static(static_path));
