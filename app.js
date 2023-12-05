@@ -42,6 +42,9 @@ app.post("/subscribeNewsetter", async (req, res) => {
     console.log(e);
   }
 });
+app.get("/", async (req, res) => {
+  res.send("live");
+});
 app.listen(port, () => {
   console.log(`server is running at port no ${port}`);
 });
