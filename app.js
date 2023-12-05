@@ -9,7 +9,7 @@ const database = require("./db/db");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: "http://127.0.0.1:5501",
+    origin: process.env.CORS,
     credentials: true,
   })
 );
