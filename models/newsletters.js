@@ -6,7 +6,11 @@ let newsletterSchema = new mongoose.Schema({
     required: true,
     lowercase: true,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-const Email = new mongoose.model("Email", newsletterSchema);
+const Email = new mongoose.model("NewsLetterEmail", newsletterSchema);
 module.exports = Email;
